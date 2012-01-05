@@ -115,6 +115,7 @@ delt_with:
 
         if(m->tag == MSG_BARRIER) {
             r = active_resources;
+            active_resources = NULL;
             while(r) {
                 r_next = r->next;
                 if(r->sequence != sequence) {
@@ -122,6 +123,9 @@ delt_with:
                     free(r->filename);
                     r->next = free_resources;
                     free_resources = r;
+                } else {
+                    r->next = active_resources;
+                    active_resources = r;
                 }
                 r = r_next;
             }

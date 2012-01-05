@@ -64,6 +64,8 @@ int main(int argc, char *argv[]) {
     game_init();
 
     resource_load("main.c", _test_load, _test_release, (void **)&_test_data);
+    resource_barrier();
+    resource_barrier();
     resource_load("main.c", _test_load, _test_release, (void **)&_test_data);
 
     animate_int(proc_spawn(lines, NULL), &line_count, 0, 100, 2.0, easeOutBounce);
