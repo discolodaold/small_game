@@ -46,7 +46,7 @@ static uint32_t _tail;
 enum {
     MESSAGE_COUNT = 32
 };
-struct loaderMessage *_messages[MESSAGE_COUNT];
+struct loaderMessage _messages[MESSAGE_COUNT];
 
 // multiple producers
 static void _enqueue(struct loaderMessage *m) {
@@ -54,7 +54,7 @@ static void _enqueue(struct loaderMessage *m) {
     do {
         tail = _tail;
     } while(!CAS(&_tail, tail, tail + 1));
-    _messages[tail & (MESSAGE_COUNT - 1)] = m;
+    _messages[tail & (MESSAGE_COUNT - 1)] = *m;
 }
 
 // single consumer
@@ -66,7 +66,7 @@ static struct loaderMessage *_dequeue(void) {
         }
         head = _head;
     } while(!CAS(&_head, head, head + 1));
-    return _messages[head & (MESSAGE_COUNT - 1)];
+    return &_messages[head & (MESSAGE_COUNT - 1)];
 }
 //}}}
 
@@ -95,7 +95,6 @@ delt_with:
         }
 
         if(m->tag == MSG_EXIT) {
-            free(m);
             r = active_resources;
             while(r) {
                 r_next = r->next;
@@ -115,7 +114,6 @@ delt_with:
         }
 
         if(m->tag == MSG_BARRIER) {
-            free(m);
             r = active_resources;
             while(r) {
                 r_next = r->next;
@@ -137,7 +135,6 @@ delt_with:
                 r->sequence = sequence;
                 *m->ptr = r->data;
                 free(m->filename);
-                free(m);
                 goto delt_with;
             }
             r = r->next;
@@ -152,7 +149,6 @@ delt_with:
 
         f = fopen(m->filename, "r");
         if(f == NULL) {
-            free(m);
             continue;
         }
         fseek(f, 0, SEEK_END);
@@ -161,7 +157,6 @@ delt_with:
         buffer = malloc(length + 1);
         if(buffer == NULL) {
             fclose(f);
-            free(m);
             continue;
         }
         fread(buffer, 1, length, f);
@@ -180,8 +175,6 @@ delt_with:
             r->next = active_resources;
             active_resources = r;
         }
-
-        free(m);
     }
 }
 
@@ -198,25 +191,28 @@ void resource_init(void) {
 }
 
 void resource_load(const char *filename, void *(*load)(size_t size, void *data), void (*release)(void *), void **ptr) {
-    struct loaderMessage *m = calloc(1, sizeof(*m));
-    m->tag = MSG_LOAD;
-    m->filename = strdup(filename);
-    m->load = load;
-    m->release = release;
-    m->ptr = ptr;
-    _enqueue(m);
+    struct loaderMessage m;
+    memset(&m, 0, sizeof(m));
+    m.tag = MSG_LOAD;
+    m.filename = strdup(filename);
+    m.load = load;
+    m.release = release;
+    m.ptr = ptr;
+    _enqueue(&m);
 }
 
 void resource_barrier(void) {
-    struct loaderMessage *m = calloc(1, sizeof(*m));
-    m->tag = MSG_BARRIER;
-    _enqueue(m);
+    struct loaderMessage m;
+    memset(&m, 0, sizeof(m));
+    m.tag = MSG_BARRIER;
+    _enqueue(&m);
 }
 
 void resource_deinit(void) {
-    struct loaderMessage *m = calloc(1, sizeof(*m));
-    m->tag = MSG_EXIT;
-    _enqueue(m);
+    struct loaderMessage m;
+    memset(&m, 0, sizeof(m));
+    m.tag = MSG_EXIT;
+    _enqueue(&m);
     pthread_join(_resource_thread, NULL);
 }
 
