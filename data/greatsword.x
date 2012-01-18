@@ -1,0 +1,8 @@
+DATUM(IronGreatsword,         "Iron Greatsword",          GREATSWORD,  .weight = 16,  .price = 50,   .damage = 15)
+DATUM(SteelGreatsword,        "Steel Greatsword",         GREATSWORD,  .weight = 17,  .price = 90,   .damage = 17)
+DATUM(OrcishGreatsword,       "Orcish Greatsword",        GREATSWORD,  .weight = 18,  .price = 75,   .damage = 18)
+DATUM(DwarvenGreatsword,      "Dwarven Greatsword",       GREATSWORD,  .weight = 19,  .price = 270,  .damage = 19)
+DATUM(ElvenGreatsword,        "Elven Greatsword",         GREATSWORD,  .weight = 20,  .price = 470,  .damage = 20)
+DATUM(GlassGreatsword,        "Glass Greatsword",         GREATSWORD,  .weight = 22,  .price = 820,  .damage = 21)
+DATUM(EbonyGreatsword,        "Ebony Greatsword",         GREATSWORD,  .weight = 22,  .price = 1440, .damage = 22)
+DATUM(DaedricGreatsword,      "Daedric Greatsword",       GREATSWORD,  .weight = 23,  .price = 2500, .damage = 24)

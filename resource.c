@@ -99,17 +99,21 @@ delt_with:
             while(r) {
                 r_next = r->next;
                 r->release(r->data);
+#ifdef DEBUG
                 free(r->filename);
+#endif
                 r->next = free_resources;
                 free_resources = r;
                 r = r_next;
             }
+#ifdef DEBUG
             r = free_resources;
             while(r) {
                 r_next = r->next;
                 free(r);
                 r = r_next;
             }
+#endif
             return NULL;
         }
 

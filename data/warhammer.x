@@ -1,0 +1,8 @@
+DATUM(IronWarhammer,          "Iron Warhammer",           WARHAMMER,   .weight = 24,  .price = 60,   .damage = 18)
+DATUM(SteelWarhammer,         "Steel Warhammer",          WARHAMMER,   .weight = 25,  .price = 110,  .damage = 20)
+DATUM(OrcishWarhammer,        "Orcish Warhammer",         WARHAMMER,   .weight = 26,  .price = 180,  .damage = 21)
+DATUM(DwarvenWarhammer,       "Dwarven Warhammer",        WARHAMMER,   .weight = 27,  .price = 325,  .damage = 22)
+DATUM(ElvenWarhammer,         "Elven Warhammer",          WARHAMMER,   .weight = 28,  .price = 565,  .damage = 23)
+DATUM(GlassWarhammer,         "Glass Warhammer",          WARHAMMER,   .weight = 29,  .price = 985,  .damage = 24)
+DATUM(EbonyWarhammer,         "Ebony Warhammer",          WARHAMMER,   .weight = 30,  .price = 1725, .damage = 25)
+DATUM(DaedricWarhammer,       "Daedric Warhammer",        WARHAMMER,   .weight = 31,  .price = 4000, .damage = 27)

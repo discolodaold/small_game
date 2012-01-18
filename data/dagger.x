@@ -1,0 +1,8 @@
+DATUM(IronDagger,             "Iron Dagger",              DAGGER,      .weight = 2,   .price = 10,   .damage = 4)
+DATUM(SteelDagger,            "Steel Dagger",             DAGGER,      .weight = 2.5, .price = 18,   .damage = 5)
+DATUM(OrcishDagger,           "Orcish Dagger",            DAGGER,      .weight = 3,   .price = 30,   .damage = 6)
+DATUM(DwarvenDagger,          "Dwarven Dagger",           DAGGER,      .weight = 3.5, .price = 55,   .damage = 7)
+DATUM(ElvenDagger,            "Elven Dagger",             DAGGER,      .weight = 4,   .price = 95,   .damage = 8)
+DATUM(GlassDagger,            "Glass Dagger",             DAGGER,      .weight = 4.5, .price = 165,  .damage = 9)
+DATUM(EbonyDagger,            "Ebony Dagger",             DAGGER,      .weight = 5,   .price = 290,  .damage = 10)
+DATUM(DaedricDagger,          "Daedric Dagger",           DAGGER,      .weight = 6,   .price = 500,  .damage = 11)

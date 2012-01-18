@@ -1,0 +1,8 @@
+DATUM(IronWarAxe,             "Iron War Axe",             WAR_AXE,     .weight = 11,  .price = 30,   .damage = 8)
+DATUM(SteelWarAxe,            "Steel War Axe",            WAR_AXE,     .weight = 12,  .price = 55,   .damage = 9)
+DATUM(OrcishWarAxe,           "Orcish War Axe",           WAR_AXE,     .weight = 13,  .price = 90,   .damage = 10)
+DATUM(DwarvenWarAxe,          "Dwarven War Axe",          WAR_AXE,     .weight = 14,  .price = 165,  .damage = 11)
+DATUM(ElvenWarAxe,            "Elven War Axe",            WAR_AXE,     .weight = 15,  .price = 280,  .damage = 12)
+DATUM(GlassWarAxe,            "Glass War Axe",            WAR_AXE,     .weight = 16,  .price = 490,  .damage = 13)
+DATUM(EbonyWarAxe,            "Ebony War Axe",            WAR_AXE,     .weight = 17,  .price = 865,  .damage = 15)
+DATUM(DaedricWarAxe,          "Daedric War Axe",          WAR_AXE,     .weight = 18,  .price = 1500, .damage = 15)

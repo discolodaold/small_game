@@ -1,0 +1,8 @@
+DATUM(FurBracers,             "Fur Bracers",              LIGHT_GUANTLET,    .weight = 1,   .price = 10,   .damage = 6)
+DATUM(FurGauntlets,           "Fur Gauntlets",            LIGHT_GUANTLET,    .weight = 2,   .price = 5,    .damage = 5)
+DATUM(HideBracers,            "Hide Bracers",             LIGHT_GUANTLET,    .weight = 1,   .price = 10,   .damage = 5)
+DATUM(LeatherBracers,         "Leather Bracers",          LIGHT_GUANTLET,    .weight = 2,   .price = 25,   .damage = 7)
+DATUM(ElvenGauntlets,         "Elven Gauntlets",          LIGHT_GUANTLET,    .weight = 1,   .price = 45,   .damage = 8)
+DATUM(ScaledBracers,          "Scaled Bracers",           LIGHT_GUANTLET,    .weight = 2,   .price = 70,   .damage = 9)
+DATUM(GlassGauntlets,         "Glass Gauntlets",          LIGHT_GUANTLET,    .weight = 2,   .price = 190,  .damage = 11)
+DATUM(DragonscaleGauntlets,   "Dragonscale Gauntlets",    LIGHT_GUANTLET,    .weight = 3,   .price = 300,  .damage = 12)

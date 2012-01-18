@@ -154,6 +154,7 @@ void proc_end_loop(void) {
 }
 
 void proc_deinit(void) {
+#ifdef DEBUG
     struct proc *p = _active.first, *p_next;
     struct proc_message *m, *m_next;
     _running = 0;
@@ -176,5 +177,6 @@ void proc_deinit(void) {
         free(m);
         m = m_next;
     }
+#endif
 }
 

@@ -1,0 +1,8 @@
+DATUM(LongBow,                "Long Bow",                 BOW,         .weight = 5,   .price = 30,   .damage = 6)
+DATUM(HuntingBow,             "Hunting Bow",              BOW,         .weight = 7,   .price = 50,   .damage = 7)
+DATUM(OrcishBow,              "Orcish Bow",               BOW,         .weight = 9,   .price = 150,  .damage = 10)
+DATUM(DwarvenBow,             "Dwarven Bow",              BOW,         .weight = 10,  .price = 270,  .damage = 12)
+DATUM(ElvenBow,               "Elven Bow",                BOW,         .weight = 12,  .price = 470,  .damage = 13)
+DATUM(GlassBow,               "Glass Bow",                BOW,         .weight = 14,  .price = 820,  .damage = 15)
+DATUM(EbonyBow,               "Ebony Bow",                BOW,         .weight = 16,  .price = 1440, .damage = 17)
+DATUM(DaedricBow,             "Daedric Bow",              BOW,         .weight = 18,  .price = 2500, .damage = 19)

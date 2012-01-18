@@ -1,0 +1,8 @@
+DATUM(IronArrow,              "Iron Arrow",               ARROW,       .weight = 0,   .price = 1,    .damage = 8)
+DATUM(SteelArrow,             "Steel Arrow",              ARROW,       .weight = 0,   .price = 2,    .damage = 10)
+DATUM(OrcishArrow,            "Orcish Arrow",             ARROW,       .weight = 0,   .price = 3,    .damage = 12)
+DATUM(DwarvenArrow,           "Dwarven Arrow",            ARROW,       .weight = 0,   .price = 4,    .damage = 14)
+DATUM(ElvenArrow,             "Elven Arrow",              ARROW,       .weight = 0,   .price = 5,    .damage = 16)
+DATUM(GlassArrow,             "Glass Arrow",              ARROW,       .weight = 0,   .price = 6,    .damage = 18)
+DATUM(EbonyArrow,             "Ebony Arrow",              ARROW,       .weight = 0,   .price = 7,    .damage = 20)
+DATUM(DaedricArrow,           "Daedric Arrow",            ARROW,       .weight = 0,   .price = 8,    .damage = 24)

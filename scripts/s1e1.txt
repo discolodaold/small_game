@@ -1,0 +1,30 @@
+set wizard Lek
+say \wizard: I know it is hard to loose your father.
+say ????: It has only been a week, no word of his whereabouts. He is alive, I know it.
+say \wizard: That was not what I ment, I know him as well as I know you. You both can survive in the depths of hell. You have a stubborn family.
+say ????: And you? living out here at the edge of the cliffside. standing on rocks naked? And you talk about stubborn.
+say \wizard: You don't know how freeing it is.
+say ????: Well, if he doesn't show up soon I am going to find him. 
+say \wizard: You dont even know where he went off to!
+say ????: I know the forest as well as he does.
+wait 2
+say ????: Did you invite a forest patrol over?
+say \wizard: No, he must be looking for you.
+say ????: How would you know?
+say \wizard: The don't call me old and senile, just old.
+say ????: I have no idea what that means.
+sound knock
+say \wizard: Why dont you get it for me.
+animation player x +10 1 linear
+animation player y +10 1 linear
+wait .5
+say Patrol: Hello, is there a young man here? I have some news about his father.
+ask name Patrol: What was his name again?
+say \name: My name is \name, son of William Blith
+say Patrol: And I am Frank.
+say Patrol Frank: Ah good, well we found some evidence of your father, some tracks.
+say \name: My father knows better than to do that, unless he wants to be followed.
+say Patrol Frank: We expected as much, the mayor, I mean your brother, said you should be with us when we search up north.
+say \name: North? near the barrier?
+say Patrol Frank: Aye. not much to find there, No one knows why anyone would go there.
+say \wizard: Maybe he wanted ... 

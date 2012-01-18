@@ -1,0 +1,8 @@
+DATUM(IronMace,               "Iron Mace",                MACE,        .weight = 13,  .price = 35,   .damage = 9)
+DATUM(SteelMace,              "Steel Mace",               MACE,        .weight = 14,  .price = 65,   .damage = 10)
+DATUM(OrcishMace,             "Orcish Mace",              MACE,        .weight = 15,  .price = 105,  .damage = 11)
+DATUM(DwarvenMace,            "Dwarven Mace",             MACE,        .weight = 16,  .price = 190,  .damage = 12)
+DATUM(ElvenMace,              "Elven Mace",               MACE,        .weight = 17,  .price = 330,  .damage = 13)
+DATUM(GlassMace,              "Glass Mace",               MACE,        .weight = 18,  .price = 575,  .damage = 14)
+DATUM(EbonyMace,              "Ebony Mace",               MACE,        .weight = 19,  .price = 1000, .damage = 16)
+DATUM(DaedricMace,            "Daedric Mace",             MACE,        .weight = 20,  .price = 1750, .damage = 16)

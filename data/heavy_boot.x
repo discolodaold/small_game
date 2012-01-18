@@ -1,0 +1,8 @@
+DATUM(IronBoots,              "Iron Boots",               HEAVY_BOOT,  .weight = 6,   .price = 25,   .damage = 10)
+DATUM(SteelCuffedBoots,       "Steel Cuffed Boots",       HEAVY_BOOT,  .weight = 8,   .price = 55,   .damage = 12)
+DATUM(DwarvenBoots,           "Dwarven Boots",            HEAVY_BOOT,  .weight = 10,  .price = 85,   .damage = 13)
+DATUM(SteelPlateBoots,        "Steel Plate Boots",        HEAVY_BOOT,  .weight = 9,   .price = 125,  .damage = 14)
+DATUM(OrcishBoots,            "Orcish Boots",             HEAVY_BOOT,  .weight = 7,   .price = 200,  .damage = 15)
+DATUM(EbonyBoots,             "Ebony Boots",              HEAVY_BOOT,  .weight = 7,   .price = 275,  .damage = 16)
+DATUM(DragonplateBoots,       "Dragonplate Boots",        HEAVY_BOOT,  .weight = 8,   .price = 425,  .damage = 17)
+DATUM(DaedricBoots,           "Daedric Boots",            HEAVY_BOOT,  .weight = 10,  .price = 625,  .damage = 18)
