@@ -1,8 +1,11 @@
 #include "resource.h"
+#include "nos.h"
 
 #include <stdint.h>
 #include <stdio.h>
 #include <string.h>
+
+#include <pthread.h>
 
 //{{{ A Fix for the ABA problem
 #define CAS __sync_bool_compare_and_swap
@@ -90,7 +93,7 @@ static void *_loader(void *unused) {
 delt_with:
         m = _dequeue();
         if(m == NULL) {
-            sys_sleep(16);
+            nos_sleep(16);
             continue;
         }
 

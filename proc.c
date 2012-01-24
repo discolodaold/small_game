@@ -117,39 +117,37 @@ struct proc *proc_current(void) {
     return _active.current;
 }
 
-static int _running;
-void proc_start_loop(void) {
-    _running = 1;
-    while(_running) {
-        struct proc *last_current = NULL;
-        _active.current = _active.first;
-        while(_running && _active.current) {
-            switch(_active.current->func(&_active.current->lc, _active.current->data, &_active.current->sleep)) {
-            case PROC_WAIT:
-            case PROC_YIELD:
-                last_current = _active.current;
-                break;
-            case PROC_EXIT:
-            case PROC_END:
-                proc_dump_messages();
-                if(last_current) {
-                    last_current->next = _active.current->next;
-                } else {
-                    _active.first = _active.current->next;
-                }
-                if(last_current->next == NULL) {
-                    _active.last = last_current;
-                }
-                _active.current->next = _free_procs;
-                _free_procs = _active.current;
-                break;
+static int _running = 1;
+int proc_frame(void) {
+    struct proc *last_current = NULL;
+    _active.current = _active.first;
+    while(_running && _active.current) {
+        switch(_active.current->func(&_active.current->lc, _active.current->data, &_active.current->sleep)) {
+        case PROC_WAIT:
+        case PROC_YIELD:
+            last_current = _active.current;
+            break;
+        case PROC_EXIT:
+        case PROC_END:
+            proc_dump_messages();
+            if(last_current) {
+                last_current->next = _active.current->next;
+            } else {
+                _active.first = _active.current->next;
             }
-            _active.current = _active.current->next;
+            if(last_current->next == NULL) {
+                _active.last = last_current;
+            }
+            _active.current->next = _free_procs;
+            _free_procs = _active.current;
+            break;
         }
+        _active.current = _active.current->next;
     }
+    return _running;
 }
 
-void proc_end_loop(void) {
+void proc_end_all(void) {
     _running = 0;
 }
 

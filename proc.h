@@ -8,8 +8,10 @@ void proc_send(struct proc *proc, char *type, void *data);
 void *proc_receive(char *type);
 void proc_dump_messages(void);
 struct proc *proc_current(void);
-void proc_start_loop(void);
-void proc_end_loop(void);
+void proc_init(void);
+int proc_frame(void);
+void proc_end_all(void);
+void proc_deinit(void);
 
 #define LC_INIT(s) s = 0;
 #define LC_RESUME(s) switch(s) { case 0:
@@ -42,9 +44,9 @@ enum {
     } while(0)
 #define proc_sleep(TIME) \
     do { \
-        *__sleep__ = sys_time() + time; \
+        *__sleep__ = nos_time() + time; \
         LC_SET(*__lc__); \
-        if(*__sleep__ < sys_time()) { \
+        if(*__sleep__ < nos_time()) { \
             return PROC_YIELD; \
         } \
     } while(0)

@@ -1,4 +1,4 @@
-all: main
+all: game mapper
 
 DATA_FILES = $(wildcard data/*.x)
 
@@ -10,6 +10,15 @@ generate_nodes: generate_nodes.c data.c data.x $(DATA_FILES)
 mapnodes.h: generate_nodes
 	./generate_nodes > mapnodes.h
 
-main: main.c sys.h sys.c proc.h proc.c animation.h animation.c resource.c resource.h maptree.c maptree.h mapnodes.h
-	gcc $(CFLAGS) -o main main.c sys.c proc.c animation.c resource.c -lm -g -lpthread
+game: game.c proc.h proc.c animation.h animation.c resource.c resource.h maptree.c maptree.h mapnodes.h nos.c nos.h
+	gcc $(CFLAGS) -o game game.c proc.c animation.c resource.c nos.c -lm -g -lpthread -lGL
+
+mapper: mapper.c nos.c nos.h
+	gcc $(CFLAGS) -o mapper mapper.c nos.c -lm -g -lpthread -lGL
+
+clean:
+	rm game
+	rm mapper
+	rm mapnodes.h
+	rm generate_nodes
 

@@ -1,10 +1,12 @@
 #include "animation.h"
-#include "sys.h"
+#include "nos.h"
 
 #include <stdlib.h>
 #include <math.h>
 
 #define PI 3.14159265
+
+extern unsigned int current_time;
 
 animation_easing(linear) {
     return t/d;

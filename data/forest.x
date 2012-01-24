@@ -1,0 +1,8 @@
+DATUM(ForestDirt1, "Forest Dirt 1", MODEL, .content = "models/forest/dirt1.jpg", .width = 256, .height = 256)
+DATUM(ForestDirt2, "Forest Dirt 2", MODEL, .content = "models/forest/dirt2.jpg", .width = 256, .height = 256)
+DATUM(ForestGrass1, "Forest Grass 1", MODEL, .content = "models/forest/grass1.png", .width = 64, .height = 64)
+DATUM(ForestGrass2, "Forest Grass 2", MODEL, .content = "models/forest/grass2.png", .width = 512, .height = 512)
+DATUM(ForestPuddle1, "Forest Puddle 1", MODEL, .content = "models/forest/puddle1.png", .width = 512, .height = 512)
+DATUM(ForestRock1, "Forest Rock 1", MODEL, .content = "models/forest/rock1.png", .width = 128, .height = 128)
+DATUM(ForestRock2, "Forest Rock 2", MODEL, .content = "models/forest/rock2.png", .width = 256, .height = 256)
+DATUM(ForestRock3, "Forest Rock 3", MODEL, .content = "models/forest/rock3.png", .width = 128, .height = 128)

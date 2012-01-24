@@ -1,27 +1,27 @@
 #include "proc.h"
 #include "animation.h"
-#include "sys.h"
+#include "nos.h"
 #include "resource.h"
+
+#include "nos.h"
 
 #include <stdlib.h>
 #include <stdio.h>
 
-float current_time;
+unsigned int current_time;
 int line_count;
 
 proc(fps) {
     proc_begin();
     while(1) {
-        sys_sleep(16);
+        nos_sleep(16);
         proc_yield();
     }
     proc_end();
-    proc_spawn(fps, NULL);
 }
 
 void game_init(void) {
     proc_init();
-    sys_init();
     resource_init();
     proc_spawn(fps, NULL);
 }
@@ -39,7 +39,7 @@ proc(lines) {
         char spaces[] = "                                                                                                    "
                         "                                                                                                    ";
         if(proc_receive("animation end")) {
-            proc_end_loop();
+            proc_end_all();
             proc_yield();
         }
         printf("\r%.*s*%.*s", line_count, spaces, 99-line_count, spaces);
@@ -60,7 +60,7 @@ static void _test_release(void *data) {
     printf("released\n");
 }
 
-int main(int argc, char *argv[]) {
+int nos_init(void) {
     game_init();
 
     resource_load("main.c", _test_load, _test_release, (void **)&_test_data);
@@ -70,8 +70,16 @@ int main(int argc, char *argv[]) {
 
     animate_int(proc_spawn(lines, NULL), &line_count, 0, 100, 2.0, easeOutBounce);
 
-    proc_start_loop();
+    return 0;
+}
 
+int nos_frame(void) {
+    current_time = nos_time();
+
+    return !proc_frame();
+}
+
+void nos_uninit(void) {
     game_deinit();
 }
 
